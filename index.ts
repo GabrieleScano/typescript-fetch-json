@@ -4,5 +4,7 @@ const url = 'https://jsonplaceholder.typicode.com/todos/1'
 
 axios.get(url)
     .then(response => {
-        console.log(response.data)
+        const todo = response.data
+        const {title, finished} = todo
+        console.log(`${title} is ${finished ? '' : 'not'} finished`)
     })
